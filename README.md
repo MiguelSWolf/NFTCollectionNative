@@ -1,8 +1,12 @@
 # NFTCollectionNative
- 
+
 ## ABOUT
 
 Project made in react native course
+
+## EVOLUTION
+To see the project evolution you can check the [log page](./logs/README.md)
+
 
 ## SETUP
 
