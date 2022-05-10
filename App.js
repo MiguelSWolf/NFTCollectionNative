@@ -1,7 +1,7 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native';
 // import ExampleUI from './components/ExampleUI';
-import CollectionListScreen from './Screens/CollectionListScreen';
+import CollectionListScreen from './screens/CollectionListScreen';
 
 class MainComponent extends React.Component {
   render() {
