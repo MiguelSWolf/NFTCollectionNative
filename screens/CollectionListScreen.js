@@ -13,11 +13,10 @@ NFTs.ownedNfts.forEach(nft => {
     />,
   );
 });
-class CollectionListScreen extends React.Component {
-  render() {
-    return <ScrollView style={styles.container}>{items}</ScrollView>;
-  }
-}
+
+export default () => {
+  return <ScrollView style={styles.container}>{items}</ScrollView>;
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -27,4 +26,3 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
-export default CollectionListScreen;

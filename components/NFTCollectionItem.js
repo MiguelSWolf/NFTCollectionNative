@@ -1,25 +1,22 @@
 import React from 'react';
 import {Image, StyleSheet, View, Text} from 'react-native';
 
-class NFTCollectionItem extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.flexSize}>
-          <Image source={{uri: this.props.image}} style={styles.image} />
-        </View>
-        <View style={{...styles.text, ...styles.flexSize}}>
-          <Text style={styles.title}>{this.props.title}</Text>
-          <Text style={styles.description}>{this.props.description}</Text>
-        </View>
-        <View style={{...styles.action, ...styles.flexSize}}>
-          <View style={[styles.triangle, styles.triangleLeft]} />
-          {/* <Button title="button" onPress={() => Alert.alert('teste')} /> */}
-        </View>
+export default () => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.flexSize}>
+        <Image source={{uri: this.props.image}} style={styles.image} />
       </View>
-    );
-  }
-}
+      <View style={{...styles.text, ...styles.flexSize}}>
+        <Text style={styles.title}>{this.props.title}</Text>
+        <Text style={styles.description}>{this.props.description}</Text>
+      </View>
+      <View style={{...styles.action, ...styles.flexSize}}>
+        <View style={[styles.triangle, styles.triangleLeft]} />
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -71,5 +68,3 @@ const styles = StyleSheet.create({
     transform: [{rotate: '90deg'}],
   },
 });
-
-export default NFTCollectionItem;
