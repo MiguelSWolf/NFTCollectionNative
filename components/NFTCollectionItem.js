@@ -1,20 +1,29 @@
 import React from 'react';
-import {Image, StyleSheet, View, Text} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {Image, StyleSheet, View, Text, TouchableHighlight} from 'react-native';
 
-export default (props) => {
+export default ({image, title, description}) => {
+  const navigation = useNavigation();
   return (
-    <View style={styles.container}>
-      <View style={styles.flexSize}>
-        <Image source={{uri: props.image}} style={styles.image} />
+    <TouchableHighlight
+      activeOpacity={0.6}
+      underlayColor="#DDDDDD"
+      onPress={() =>
+        navigation.navigate('singleNFT', {image, title, description})
+      }>
+      <View style={styles.container}>
+        <View style={styles.flexSize}>
+          <Image source={{uri: image}} style={styles.image} />
+        </View>
+        <View style={{...styles.text, ...styles.flexSize}}>
+          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.description}>{description}</Text>
+        </View>
+        <View style={{...styles.action, ...styles.flexSize}}>
+          <View style={[styles.triangle, styles.triangleLeft]} />
+        </View>
       </View>
-      <View style={{...styles.text, ...styles.flexSize}}>
-        <Text style={styles.title}>{props.title}</Text>
-        <Text style={styles.description}>{props.description}</Text>
-      </View>
-      <View style={{...styles.action, ...styles.flexSize}}>
-        <View style={[styles.triangle, styles.triangleLeft]} />
-      </View>
-    </View>
+    </TouchableHighlight>
   );
 };
 
