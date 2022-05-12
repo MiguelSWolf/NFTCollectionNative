@@ -1,15 +1,15 @@
 import React from 'react';
 import {Image, StyleSheet, View, Text} from 'react-native';
 
-export default () => {
+export default (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.flexSize}>
-        <Image source={{uri: this.props.image}} style={styles.image} />
+        <Image source={{uri: props.image}} style={styles.image} />
       </View>
       <View style={{...styles.text, ...styles.flexSize}}>
-        <Text style={styles.title}>{this.props.title}</Text>
-        <Text style={styles.description}>{this.props.description}</Text>
+        <Text style={styles.title}>{props.title}</Text>
+        <Text style={styles.description}>{props.description}</Text>
       </View>
       <View style={{...styles.action, ...styles.flexSize}}>
         <View style={[styles.triangle, styles.triangleLeft]} />
