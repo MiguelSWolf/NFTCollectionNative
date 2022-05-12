@@ -4,16 +4,17 @@ import NFTCollectionItem from '../components/NFTCollectionItem';
 import SearchCollection from '../components/SearchCollection';
 import NFTs from '../assets/NFTs.json';
 
-export default () => {
+export default ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.search}>
         <SearchCollection />
       </View>
       <ScrollView style={styles.scroll}>
-        {NFTs.ownedNfts.map(nft => {
+        {NFTs.ownedNfts.map((nft, index) => {
           return (
             <NFTCollectionItem
+              key={`${index}-${nft.id}`}
               title={nft.title}
               image={nft.media[0].gateway ?? ''}
               description={nft.description}
